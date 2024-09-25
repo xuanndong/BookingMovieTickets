@@ -1,6 +1,6 @@
 const node = document.getElementById('node');
 const loginPage = document.querySelector('.signup-page');
-const closeIcons = document.querySelectorAll('#closeIcon');
+const closeIcons = document.querySelectorAll('#close');
 
 node.addEventListener('click', () => {
     loginPage.classList.remove('d-none');
