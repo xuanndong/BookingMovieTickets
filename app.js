@@ -1,6 +1,8 @@
 import express from 'express';
 import 'dotenv/config';
+import page from './controllers/main.js';
 import signup from './routes/signupForm.js';
+import login from './routes/loginForm.js';
 import path from 'path';
 
 const __dirname = process.env.dirname;
@@ -17,7 +19,17 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules', 'bootstrap',
 app.use('/js', express.static(path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'js')));
 app.use('/icons', express.static(path.join(__dirname, 'node_modules', 'boxicons')));
 
-app.use('/', signup.createAccount);
+
+// Get API
+
+// Display main page
+app.get('/', page.mainPage);
+
+// Working with the Sign Up page
+app.use('/signup', signup.createAccount);
+
+// Working with the Login page
+app.use('/login', login.loginRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

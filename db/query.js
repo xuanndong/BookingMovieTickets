@@ -1,10 +1,7 @@
 import pool from "./pool.js";
 
-async function getAccounts() {
-    const { rows } = await pool.pool.query("SELECT * FROM accounts");
-    return rows;
-}
 
+// Add an account to the database
 async function addAccounts(account) {
     await pool.pool.query(`
         insert into accounts (username, email, hashpwd)
@@ -13,7 +10,17 @@ async function addAccounts(account) {
     `, [account.username, account.email, account.hashpwd]);
 }
 
+// Log in to your account
+async function getAccount(account) {
+    const { rows } = await pool.pool.query(`
+        select * from accounts
+        where username = $1 and hashpwd = $2;
+    `, [account.username, account.hashpwd]);
+
+    return rows;
+}
+
 export default {
-    getAccounts,
     addAccounts,
+    getAccount,
 };

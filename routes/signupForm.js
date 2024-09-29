@@ -3,8 +3,7 @@ import controller from '../controllers/signup.js';
 
 const createAccount = Router();
 
-createAccount.get('/', controller.indexDeisgn);
-createAccount.post('/signup', controller.createAccountsPost);
+createAccount.post('', controller.createAccount);
 
 export default {
     createAccount,

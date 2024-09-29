@@ -41,8 +41,8 @@
 
                 <!-- Login and Sign up-->
                 <ul class="nav col-auto col-sm-5 col-lg-3 d-flex justify-content-end" id="notLoggedIn">
-                    <li class="nav-item item"><a href="#" class="nav-link link-body-emphasis px-2" id="login">Login</a></li>
-                    <li class="nav-item item"><a href="#" class="nav-link link-body-emphasis px-2" id="signup">Sign up</a></li>
+                    <li class="nav-item item"><a class="nav-link link-body-emphasis px-2" id="login">Login</a></li>
+                    <li class="nav-item item"><a class="nav-link link-body-emphasis px-2" id="signup">Sign up</a></li>
                 </ul>
                 <!-- /Login and Sign up-->
 
@@ -152,18 +152,18 @@
                 <!--/ Divider -->
 
                 <!-- Form -->
-                <form id="signinForm" action="/signin" method="POST">
+                <form id="loginForm" method="POST" action="/login">
                     <div class="input-group mb-2">
                         <span class="input-group-text">
                             <i class="bx bx-user"></i>
                         </span>
-                        <input type="text" name="" class="form-control form-control-lg fs-6" placeholder="Username">
+                        <input type="text" name="username" class="form-control form-control-lg fs-6" placeholder="Username">
                     </div>
                     <div class="input-group mb-1">
                         <span class="input-group-text">
                             <i class="bx bx-lock-alt"></i>
                         </span>
-                        <input type="password" name="" class="form-control form-control-lg fs-6" placeholder="Password">
+                        <input type="password" name="hashpwd" class="form-control form-control-lg fs-6" placeholder="Password">
                     </div>
                     <div class="input-group mb-2 d-flex justify-content-between">
                         <div class="form-check">
@@ -219,24 +219,24 @@
                 <!--/ Divider -->
 
                 <!-- Form -->
-                <form id="signupForm" action="/signup" method="POST">
+                <form id="signupForm" method="POST" action="/signup">
                     <div class="input-group mb-2">
                         <span class="input-group-text">
                             <i class="bx bx-user"></i>
                         </span>
-                        <input type="text" name="" class="form-control form-control-lg fs-6" placeholder="Username">
+                        <input type="text" name="username" class="form-control form-control-lg fs-6" placeholder="Username">
                     </div>
                     <div class="input-group mb-2">
                         <span class="input-group-text">
                             <i class="bx bx-envelope"></i>
                         </span>
-                        <input type="text" name="" class="form-control form-control-lg fs-6" placeholder="Email">
+                        <input type="text" name="email" class="form-control form-control-lg fs-6" placeholder="Email">
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">
                             <i class="bx bx-lock-alt"></i>
                         </span>
-                        <input type="password" name="" class="form-control form-control-lg fs-6" placeholder="Password">
+                        <input type="password" name="hashpwd" class="form-control form-control-lg fs-6" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg w-100 mb-1">Signup</button>
                 </form>
