@@ -11,7 +11,7 @@ const notLoggedIn = document.getElementById('notLoggedIn');
 // Bắt sự kiện khi người dùng đăng nhập
 
 // Chọn item trong sidebar
-const navMenu = document.querySelectorAll('#nav-menu');
+const navMenu = document.querySelectorAll('.nav-menu');
 navMenu.forEach(item => {
     item.addEventListener('mouseover', () => {
         item.classList.add('active');

@@ -8,17 +8,22 @@ async function loginAccount(req, res){
     const account = await db.getAccount(req.body);
 
     // const customer = account.map(i => Object.values(i));
-    // res.render('index', {
-    //     username: account.map(i => Object.values(i).join('<br>')),
-    // })
+    res.render('index', {
+        username: account[0].username,
+    })
     // const a = account.filter(i => Object.)
-    let user = '';
-    for(const entry of account) {
-        const [key, value] = entry;
-        user = key;
-    };
+    // let user = '';
+    // for(const entry of account) {
+    //     const [key, value] = entry;
+    //     user = key;
+    // };
 
-    res.send(user);
+    // let accc = '';
+    // for (const i of account) {
+    //     accc += i.username +" ";
+    // }
+
+    // res.send(accc);
 }
 
 export default {

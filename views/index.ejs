@@ -50,7 +50,7 @@
                 <div class="d-none col-sm-5 col-lg-3 d-flex justify-content-end me-2 dropdown" id="loggedIn">
                 <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>mdo</strong>
+                        <strong><%username%></strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                         <li><a class="dropdown-item text-decoration-none" href="#">Wallet</a></li>
@@ -75,31 +75,31 @@
         <div id="sidebar" class="d-none d-md-flex flex-column flex-shrink-0 p-2 border border-dark">
             <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="#" id="nav-menu" class="nav-link active text-decoration-none" aria-current="page"> <!-- Khi kích vào cái mục nào trong menu sẽ chuyển active sang đó và xoá text-dark -->
+                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none" aria-current="page"> <!-- Khi kích vào cái mục nào trong menu sẽ chuyển active sang đó và xoá text-dark -->
                         <i class='bx bx-home-alt me-1'></i>
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="nav-menu" class="nav-link text-dark text-decoration-none">
+                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
                         <i class='bx bxs-dashboard me-1'></i>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="nav-menu" class="nav-link text-dark text-decoration-none">
+                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
                         <i class='bx bx-calendar me-1' ></i>
                         Orders
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="nav-menu" class="nav-link text-dark text-decoration-none">
+                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
                         <i class='bx bx-bar-chart-square me-1'></i>
                         Products
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="nav-menu" class="nav-link text-dark text-decoration-none">
+                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
                         <i class='bx bx-user-circle me-1' ></i>
                         Customers
                     </a>
@@ -157,7 +157,7 @@
                         <span class="input-group-text">
                             <i class="bx bx-user"></i>
                         </span>
-                        <input type="text" name="username" class="form-control form-control-lg fs-6" placeholder="Username">
+                        <input type="text" name="username" class="form-control form-control-lg fs-6" placeholder="Username/Email">
                     </div>
                     <div class="input-group mb-1">
                         <span class="input-group-text">
