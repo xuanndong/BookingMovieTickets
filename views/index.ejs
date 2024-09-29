@@ -53,11 +53,11 @@
                         <strong>mdo</strong>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item text-decoration-none" href="#">Wallet</a></li>
+                        <li><a class="dropdown-item text-decoration-none" href="#">Settings</a></li>
+                        <li><a class="dropdown-item text-decoration-none" href="#">Profile</a></li>
                         <li><hr class="dropdown-divider border-1 border-white"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item text-decoration-none" href="#">Sign out</a></li>
                     </ul>
                 </div>
                 <!-- /When login completed -->
@@ -120,23 +120,23 @@
      
     <!-- Login and Signup page -->
     <!-- Login page -->
-    <div class="d-none login-page fs-6 rounded-4 border border-4 border-dark pb-3 col-sm-6 col-lg-5 col-xl-3">
+    <div class="d-none login-page fs-6 rounded-4 border border-4 border-dark pb-3 col-8 col-md-5 col-lg-4 col-xl-3">
         <i class="bx bx-x" id="close"></i>
-        <div class="row align-items-center justify-content-center px-4 px-sm-0">
-            <div class="col-sm-10 col-lg-10 col-xl-10">
+        <div class="row align-items-center justify-content-center px-3">
+            <div class="col col-md-10 col-lg-10 col-xl-10">
                 <!-- Logo -->
-                <a href="#" class="d-flex justify-content-center mb-1">
-                    <img src="/images/logo.png" alt="" width="240">
+                <a href="#" class="d-flex justify-content-center">
+                    <img src="/images/logo.png" alt="" class="log-logo">
                 </a>
                 <!--/ Logo -->
 
-                <div class="text-center mb-3" id="mobile-text">
-                    <h3 class="fw-bold">Log In</h3>
+                <div class="text-center mb-2" id="mobile-text">
+                    <h4 class="fw-bold">Log In</h4>
                     <p class="text-secondary">Get access to your account</p>
                 </div>
 
                 <!-- Social Login -->
-                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-3">
+                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-2">
                     <i class='bx bxl-google text-danger me-2 fs-3'></i> Login with Google
                 </button>
                 <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100">
@@ -153,19 +153,19 @@
 
                 <!-- Form -->
                 <form id="signinForm" action="/signin" method="POST">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-2">
                         <span class="input-group-text">
                             <i class="bx bx-user"></i>
                         </span>
                         <input type="text" name="" class="form-control form-control-lg fs-6" placeholder="Username">
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-1">
                         <span class="input-group-text">
                             <i class="bx bx-lock-alt"></i>
                         </span>
                         <input type="password" name="" class="form-control form-control-lg fs-6" placeholder="Password">
                     </div>
-                    <div class="input-group mb-3 d-flex justify-content-between">
+                    <div class="input-group mb-2 d-flex justify-content-between">
                         <div class="form-check">
                             <input type="checkbox" name="" id="formCheck" class="form-check-input">
                             <label for="formCheck" class="form-check-label text-secondary"><small>Remenber me</small></label>
@@ -174,7 +174,7 @@
                             <small><a href="#">Forgot Password?</a></small>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">Login</button>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-1">Login</button>
                 </form>
                 <!--/ Form -->
 
@@ -187,23 +187,23 @@
     <!--/ Login page -->
 
     <!-- Signup page -->
-    <div class="d-none signup-page fs-6 rounded-4 border border-4 border-dark pb-3 col-sm-6 col-lg-5 col-xl-3">
+    <div class="d-none signup-page fs-6 rounded-4 border border-4 border-dark pb-3 col-8 col-md-5 col-lg-4 col-xl-3">
         <i class="bx bx-x" id="close"></i>
-        <div class="row align-items-center justify-content-center px-4 px-sm-0">
-            <div class="col-sm-10 col-lg-10 col-xl-10">
+        <div class="row align-items-center justify-content-center px-3">
+            <div class="col col-md-10 col-lg-10 col-xl-10">
                 <!-- Logo -->
-                <a href="#" class="d-flex justify-content-center mb-1">
-                    <img src="/images/logo.png" alt="" width="240">
+                <a href="#" class="d-flex justify-content-center">
+                    <img src="/images/logo.png" alt="" class="log-logo">
                 </a>
                 <!--/ Logo -->
 
-                <div class="text-center mb-3" id="mobile-text">
-                    <h3 class="fw-bold">Sign Up</h3>
+                <div class="text-center mb-2" id="mobile-text">
+                    <h4 class="fw-bold">Sign Up</h4>
                     <p class="text-secondary">Create a new account</p>
                 </div>
 
                 <!-- Social Login -->
-                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-3">
+                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-2">
                     <i class='bx bxl-google text-danger me-2 fs-3'></i> Login with Google
                 </button>
                 <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100">
@@ -220,13 +220,13 @@
 
                 <!-- Form -->
                 <form id="signupForm" action="/signup" method="POST">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-2">
                         <span class="input-group-text">
                             <i class="bx bx-user"></i>
                         </span>
                         <input type="text" name="" class="form-control form-control-lg fs-6" placeholder="Username">
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-2">
                         <span class="input-group-text">
                             <i class="bx bx-envelope"></i>
                         </span>
@@ -238,7 +238,7 @@
                         </span>
                         <input type="password" name="" class="form-control form-control-lg fs-6" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">Signup</button>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-1">Signup</button>
                 </form>
                 <!--/ Form -->
 
