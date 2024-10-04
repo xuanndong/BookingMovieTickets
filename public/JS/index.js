@@ -3,8 +3,9 @@ const loginPage = document.querySelector('.login-page');
 const signUp = document.getElementById('signup');
 const signUpPage = document.querySelector('.signup-page');
 const closeIcons = document.querySelectorAll('#close');
-const bxMenu = document.querySelector('.bx-menu');
+const bxMenu = document.querySelector('.menu-show');
 const sidebar = document.getElementById('sidebar');
+
 // Bắt sự kiện khi người dùng đăng nhập
 const loggedIn = document.getElementById('loggedIn');
 const notLoggedIn = document.getElementById('notLoggedIn');
@@ -45,7 +46,7 @@ closeIcons.forEach(icon => {
     })
 });
 
-bxMenu.addEventListener('click', (event) => {
+bxMenu.addEventListener('click', () => {
     sidebar.classList.toggle('d-none');
 });
 

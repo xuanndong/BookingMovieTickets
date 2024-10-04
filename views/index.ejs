@@ -20,7 +20,7 @@
 
         <!-- Slogan -->
         <div class="col-7 col-md-7 col-lg-5 col-xl-5 col-xxl-4 m-auto">
-            <div class="slogan fs-1 d-flex justify-content-evenly align-items-center m-auto">
+            <div class="slogan d-flex justify-content-evenly align-items-center m-auto">
                 <i class='bx bxs-movie-play'></i>
                 <span class="p-2">Great Movies Await!</span>
             </div>
@@ -29,91 +29,89 @@
     </header>
 
     <!-- Navbar -->
-    <nav class="container-fluid py-3 mb-3 border-bottom">
-        <div>
-            <div class="col-sm col-lg d-flex justify-content-end align-items-center">
-                <!-- Search bar -->
-                <form class="col-sm-auto col-lg-4 me-5" role="search">
-                    <!-- <i class='bx bx-search' style="font-size: 2rem; right: 0.3rem; position: absolute;"></i> -->
-                    <input type="search" id="search" class="form-control border-3 rounded-3" placeholder="Search..." aria-label="Search">
-                </form>
-                <!-- /Search bar -->
-
-                <!-- Login and Sign up-->
-                <ul class="nav col-auto col-sm-5 col-lg-3 d-flex justify-content-end" id="notLoggedIn">
-                    <li class="nav-item item"><a class="nav-link link-body-emphasis px-2" id="login">Login</a></li>
-                    <li class="nav-item item"><a class="nav-link link-body-emphasis px-2" id="signup">Sign up</a></li>
+    <nav class="container-fluid d-flex align-items-center justify-content-between py-3 mb-3 border-bottom">
+        <div class="d-flex align-items-center">
+            <button class="menu-show d-flex align-items-center"><i class='bx bx-menu fw-bold'></i><span class="d-none">Menu</span></button>
+            <!-- Tạo hiệu ứng hiển thị menu-->
+            <!-- xoá d-md-flex -->
+            <div id="sidebar" class="d-none flex-column flex-shrink-0 p-2 border border-dark">
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none" aria-current="page"> <!-- Khi kích vào cái mục nào trong menu sẽ chuyển active sang đó và xoá text-dark -->
+                            <i class='bx bx-home-alt me-1'></i>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
+                            <i class='bx bxs-dashboard me-1'></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
+                            <i class='bx bx-calendar me-1' ></i>
+                            Orders
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
+                            <i class='bx bx-bar-chart-square me-1'></i>
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
+                            <i class='bx bx-user-circle me-1' ></i>
+                            Customers
+                        </a>
+                    </li>
                 </ul>
-                <!-- /Login and Sign up-->
-
-                <!-- When login completed -->
-                <div class="d-none col-sm-5 col-lg-3 d-flex justify-content-end me-2 dropdown" id="loggedIn">
-                <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>mdo</strong>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item text-decoration-none" href="#">Wallet</a></li>
-                        <li><a class="dropdown-item text-decoration-none" href="#">Settings</a></li>
-                        <li><a class="dropdown-item text-decoration-none" href="#">Profile</a></li>
-                        <li><hr class="dropdown-divider border-1 border-white"></li>
-                        <li><a class="dropdown-item text-decoration-none" href="#">Sign out</a></li>
-                    </ul>
-                </div>
-                <!-- /When login completed -->
+            </div> 
+            <i class='bx bxs-bell cursor-pointer p-2'></i>
+        </div>
+        
+        <div class="d-flex justify-content-evenly align-items-center">
+            <!-- Search bar -->
+            <div class="box-search">
+                <i class='bx bx-search fw-bold d-flex align-items-center justify-content-center'></i>
+                <form role="search">
+                    <input type="search" id="search" class="d-none d-md-flex form-control border-3 rounded-3" placeholder="Search..." aria-label="Search">
+                </form>
             </div>
+            <!-- /Search bar -->
+
+            <!-- Login and Sign up-->
+            <ul class="nav align-items-center justify-content-end" id="notLoggedIn">
+                <li class="nav-item item"><a class="nav-link link-body-emphasis" id="login">Login</a></li>
+                <li class="nav-item item"><a class="nav-link link-body-emphasis" id="signup">Sign up</a></li>
+            </ul>
+            <!-- /Login and Sign up-->
+
+            <!-- When login completed -->
+            <div class="d-none d-flex justify-content-end me-2 dropdown" id="loggedIn">
+            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>mdo</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                    <li><a class="dropdown-item text-decoration-none" href="#">Wallet</a></li>
+                    <li><a class="dropdown-item text-decoration-none" href="#">Settings</a></li>
+                    <li><a class="dropdown-item text-decoration-none" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider border-1 border-white"></li>
+                    <li><a class="dropdown-item text-decoration-none" href="#">Sign out</a></li>
+                </ul>
+            </div>
+            <!-- /When login completed -->
         </div>
     </nav>
     <!-- /Navbar -->
 
     <!-- Content -->
     <div class="container-fluid d-flex-row d-md-flex justify-content-between align-items-center" id="content">
-        <main class="w-100 d-flex justify-content-between align-items-center d-md-none">
-            <i class='d-md-none bx bx-menu fw-bold fs-3'></i>      
-            <i class='bx bxs-bell fs-3 cursor-pointer d-md-none'></i>
-        </main>
-        <div id="sidebar" class="d-none d-md-flex flex-column flex-shrink-0 p-2 border border-dark">
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none" aria-current="page"> <!-- Khi kích vào cái mục nào trong menu sẽ chuyển active sang đó và xoá text-dark -->
-                        <i class='bx bx-home-alt me-1'></i>
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                        <i class='bx bxs-dashboard me-1'></i>
-                        Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                        <i class='bx bx-calendar me-1' ></i>
-                        Orders
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                        <i class='bx bx-bar-chart-square me-1'></i>
-                        Products
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                        <i class='bx bx-user-circle me-1' ></i>
-                        Customers
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <hr class="d-md-none container-fluid border-dark" id="hr-content">
+        <hr class="d-md-none container border-dark" id="hr-content">
         <div id="main-content" class="container-fluid border border-dark rounded-3">
-            <ul>
-                <li>a</li>
-                <li>a</li>
-                <li>a</li>
-                <li>a</li>
-            </ul>
+            <span class="title fs-3 fw-bold text-warning">Popular Movies</span>
         </div> 
     </div>
     <!-- Content -->
@@ -179,7 +177,7 @@
                 <!--/ Form -->
 
                 <div class="text-center">
-                    <small>Don't have an account? <a href="#" class="fw-bold">Sign Up</a></small>
+                    <small>Don't have an account? <a href="#" class="fw-bold text-decoration-none">Sign Up</a></small>
                 </div>
             </div>
         </div>
@@ -243,7 +241,7 @@
                 <!--/ Form -->
 
                 <div class="text-center">
-                    <small>Already an account? <a href="#" class="fw-bold">Login</a></small>
+                    <small>Already an account? <a href="#" class="fw-bold text-decoration-none">Login</a></small>
                 </div>
             </div>
         </div>
@@ -251,9 +249,8 @@
     <!--/ Signup page -->
 
     <!-- Footer -->
-
     <div class="container-fluid fs-4">
-        <footer class="d-flex flex-column flex-lg-row justify-content-between align-items-center py-3 my-4 border-top border-3">
+        <footer class="d-flex flex-column flex-lg-row justify-content-evenly align-items-center py-3 my-4 border-top border-3">
             <div class="col-ms-5 d-flex align-items-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
                     <img src="/images/logo.png" class="logoFooter" alt="Logo" />
