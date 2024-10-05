@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 import 'dotenv/config';
 import page from './controllers/main.js';
 import signup from './routes/signupForm.js';
@@ -8,6 +8,7 @@ import path from 'path';
 const __dirname = process.env.dirname;
 
 const app = express();
+
 
 app.set('view engine', 'ejs');
 app.use(express.json());

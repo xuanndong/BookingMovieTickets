@@ -33,7 +33,6 @@
         <div class="d-flex align-items-center">
             <button class="menu-show d-flex align-items-center"><i class='bx bx-menu fw-bold'></i><span class="d-none">Menu</span></button>
             <!-- Tạo hiệu ứng hiển thị menu-->
-            <!-- xoá d-md-flex -->
             <div id="sidebar" class="d-none flex-column flex-shrink-0 p-2 border border-dark">
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
@@ -82,14 +81,14 @@
             <!-- /Search bar -->
 
             <!-- Login and Sign up-->
-            <ul class="d-none nav align-items-center justify-content-end" id="notLoggedIn">
+            <ul class="nav align-items-center justify-content-end" id="notLoggedIn">
                 <li class="nav-item item"><a class="nav-link link-body-emphasis" id="login">Login</a></li>
                 <li class="nav-item item"><a class="nav-link link-body-emphasis" id="signup">Sign up</a></li>
             </ul>
             <!-- /Login and Sign up-->
 
             <!-- When login completed -->
-            <div class="d-flex justify-content-end me-2 dropdown" id="loggedIn">
+            <div class="d-none d-flex justify-content-end me-2 dropdown" id="loggedIn">
             <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
                     <strong>mdo</strong>
