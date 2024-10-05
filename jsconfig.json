@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "target": "ES6",
+        "checkJs": true,
+        "typeRoots": ["./node_modules/@types"],
+        "baseUrl": "."
+    },
+    "exclude": ["node_modules"]
+}
