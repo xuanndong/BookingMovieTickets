@@ -5,7 +5,7 @@ import signup from './routes/signupForm.js';
 import login from './routes/loginForm.js';
 import path from 'path';
 
-const __dirname = process.env.dirname;
+const __dirname = import.meta.dirname;
 
 const app = express();
 
