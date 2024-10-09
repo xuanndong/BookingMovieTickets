@@ -4,106 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title><%=pageTitle%></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href='/icons/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/CSS/index.css">
+    <!-- Using bootstrap js -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <body>
-    <header class="container-fluid bg-image pb-5">
-        <!-- Logo -->
-        <div class="col-3 col-md-3 col-lg-2 p-3 mb-4" id="logo">
-            <img src="/images/logo.png" class="img-fluid" alt="">
-        </div>
-        <!-- /Logo -->
-
-        <!-- Slogan -->
-        <div class="col-7 col-md-7 col-lg-5 col-xl-5 col-xxl-4 m-auto">
-            <div class="slogan d-flex justify-content-evenly align-items-center m-auto">
-                <i class='bx bxs-movie-play'></i>
-                <span class="p-2">Great Movies Await!</span>
-            </div>
-        </div>
-        <!-- /Slogan -->
-    </header>
+    <!-- Header -->
+    <%- include('./partials/header'); %>
+    <!-- /Header -->
 
     <!-- Navbar -->
-    <nav class="container-fluid d-flex align-items-center justify-content-between py-3 mb-3 border-bottom">
-        <div class="d-flex align-items-center">
-            <button class="menu-show d-flex align-items-center"><i class='bx bx-menu fw-bold'></i><span class="d-none">Menu</span></button>
-            <!-- Tạo hiệu ứng hiển thị menu-->
-            <div id="sidebar" class="d-none flex-column flex-shrink-0 p-2 border border-dark">
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none" aria-current="page"> <!-- Khi kích vào cái mục nào trong menu sẽ chuyển active sang đó và xoá text-dark -->
-                            <i class='bx bx-home-alt me-1'></i>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                            <i class='bx bxs-dashboard me-1'></i>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                            <i class='bx bx-calendar me-1' ></i>
-                            Orders
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                            <i class='bx bx-bar-chart-square me-1'></i>
-                            Products
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-menu nav-link text-dark text-decoration-none">
-                            <i class='bx bx-user-circle me-1' ></i>
-                            Customers
-                        </a>
-                    </li>
-                </ul>
-            </div> 
-            <i class='bx bxs-bell cursor-pointer p-2'></i>
-        </div>
-        
-        <div class="d-flex justify-content-evenly align-items-center">
-            <!-- Search bar -->
-            <div class="box-search">
-                <i class='bx bx-search fw-bold d-flex align-items-center justify-content-center'></i>
-                <form role="search">
-                    <input type="search" id="search" class="d-none d-md-flex form-control border-3 rounded-3" placeholder="Search..." aria-label="Search">
-                </form>
-            </div>
-            <!-- /Search bar -->
-
-            <!-- Login and Sign up-->
-            <ul class="nav align-items-center justify-content-end" id="notLoggedIn">
-                <li class="nav-item item"><a class="nav-link link-body-emphasis" id="login">Login</a></li>
-                <li class="nav-item item"><a class="nav-link link-body-emphasis" id="signup">Sign up</a></li>
-            </ul>
-            <!-- /Login and Sign up-->
-
-            <!-- When login completed -->
-            <div class="d-none d-flex justify-content-end me-2 dropdown" id="loggedIn">
-            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong>mdo</strong>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                    <li><a class="dropdown-item text-decoration-none" href="#">Wallet</a></li>
-                    <li><a class="dropdown-item text-decoration-none" href="#">Settings</a></li>
-                    <li><a class="dropdown-item text-decoration-none" href="#">Profile</a></li>
-                    <li><hr class="dropdown-divider border-1 border-white"></li>
-                    <li><a class="dropdown-item text-decoration-none" href="#">Sign out</a></li>
-                </ul>
-            </div>
-            <!-- /When login completed -->
-        </div>
-    </nav>
+    <%- include('./partials/nav'); %>
     <!-- /Navbar -->
 
     <!-- Content -->
@@ -117,165 +31,19 @@
      
     <!-- Login and Signup page -->
     <!-- Login page -->
-    <div class="d-none login-page fs-6 rounded-4 border border-4 border-dark pb-3 col-8 col-md-5 col-lg-4 col-xl-3">
-        <i class="bx bx-x" id="close"></i>
-        <div class="row align-items-center justify-content-center px-3">
-            <div class="col col-md-10 col-lg-10 col-xl-10">
-                <!-- Logo -->
-                <a href="#" class="d-flex justify-content-center">
-                    <img src="/images/logo.png" alt="" class="log-logo">
-                </a>
-                <!--/ Logo -->
-
-                <div class="text-center mb-2" id="mobile-text">
-                    <h4 class="fw-bold">Log In</h4>
-                    <p class="text-secondary">Get access to your account</p>
-                </div>
-
-                <!-- Social Login -->
-                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-2">
-                    <i class='bx bxl-google text-danger me-2 fs-3'></i> Login with Google
-                </button>
-                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100">
-                    <i class='bx bxl-facebook text-primary me-2 fs-3'></i> Login with Facebook
-                </button>
-                <!--/ Social Login -->
-
-                <!-- Divider -->
-                <div class="position-relative">
-                    <hr class="text-secondary divider">
-                    <div class=" divider-content-center">Or</div>
-                </div>
-                <!--/ Divider -->
-
-                <!-- Form -->
-                <form id="loginForm" method="POST" action="/login">
-                    <div class="input-group mb-2">
-                        <span class="input-group-text">
-                            <i class="bx bx-user"></i>
-                        </span>
-                        <input type="text" name="username" class="form-control form-control-lg fs-6" placeholder="Username/Email">
-                    </div>
-                    <div class="input-group mb-1">
-                        <span class="input-group-text">
-                            <i class="bx bx-lock-alt"></i>
-                        </span>
-                        <input type="password" name="hashpwd" class="form-control form-control-lg fs-6" placeholder="Password">
-                    </div>
-                    <div class="input-group mb-2 d-flex justify-content-between">
-                        <div class="form-check">
-                            <input type="checkbox" name="" id="formCheck" class="form-check-input">
-                            <label for="formCheck" class="form-check-label text-secondary"><small>Remenber me</small></label>
-                        </div>
-                        <div>
-                            <small><a href="#">Forgot Password?</a></small>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-1">Login</button>
-                </form>
-                <!--/ Form -->
-
-                <div class="text-center">
-                    <small>Don't have an account? <a href="#" class="fw-bold text-decoration-none">Sign Up</a></small>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%- include('./login'); %>
     <!--/ Login page -->
 
     <!-- Signup page -->
-    <div class="d-none signup-page fs-6 rounded-4 border border-4 border-dark pb-3 col-8 col-md-5 col-lg-4 col-xl-3">
-        <i class="bx bx-x" id="close"></i>
-        <div class="row align-items-center justify-content-center px-3">
-            <div class="col col-md-10 col-lg-10 col-xl-10">
-                <!-- Logo -->
-                <a href="#" class="d-flex justify-content-center">
-                    <img src="/images/logo.png" alt="" class="log-logo">
-                </a>
-                <!--/ Logo -->
-
-                <div class="text-center mb-2" id="mobile-text">
-                    <h4 class="fw-bold">Sign Up</h4>
-                    <p class="text-secondary">Create a new account</p>
-                </div>
-
-                <!-- Social Login -->
-                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100 mb-2">
-                    <i class='bx bxl-google text-danger me-2 fs-3'></i> Login with Google
-                </button>
-                <button class="btn btn-lg btn-outline-secondary btn-outline-custom w-100">
-                    <i class='bx bxl-facebook text-primary me-2 fs-3'></i> Login with Facebook
-                </button>
-                <!--/ Social Login -->
-
-                <!-- Divider -->
-                <div class="position-relative">
-                    <hr class="text-secondary divider">
-                    <div class="divider-content-center">Or</div>
-                </div>
-                <!--/ Divider -->
-
-                <!-- Form -->
-                <form id="signupForm" method="POST" action="/signup">
-                    <div class="input-group mb-2">
-                        <span class="input-group-text">
-                            <i class="bx bx-user"></i>
-                        </span>
-                        <input type="text" name="username" class="form-control form-control-lg fs-6" placeholder="Username">
-                    </div>
-                    <div class="input-group mb-2">
-                        <span class="input-group-text">
-                            <i class="bx bx-envelope"></i>
-                        </span>
-                        <input type="text" name="email" class="form-control form-control-lg fs-6" placeholder="Email">
-                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="bx bx-lock-alt"></i>
-                        </span>
-                        <input type="password" name="hashpwd" class="form-control form-control-lg fs-6" placeholder="Password">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-1">Signup</button>
-                </form>
-                <!--/ Form -->
-
-                <div class="text-center">
-                    <small>Already an account? <a href="#" class="fw-bold text-decoration-none">Login</a></small>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%- include('./signup'); %>
     <!--/ Signup page -->
 
     <!-- Footer -->
-    <div class="container-fluid fs-4 ">
-        <footer class="d-flex flex-column flex-lg-row justify-content-evenly align-items-center py-3 my-4 border-top border-3">
-            <div class="col-ms-5 d-flex align-items-center">
-                <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                    <img src="/images/logo.png" class="logoFooter" alt="Logo" />
-                </a>
-                <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 Company, Inc</span>
-            </div>
-
-            <ul class="nav justify-content-end list-unstyled d-flex fs-2">
-                <li class="ms-3">
-                    <a class="text-body-secondary" href="#"><i class="bx bxl-twitter"></i></a>
-                </li>
-                <li class="ms-3">
-                    <a class="text-body-secondary" href="#"><i class="bx bxl-instagram"></i></a>
-                </li>
-                <li class="ms-3">
-                    <a class="text-body-secondary" href="#"><i class="bx bxl-facebook-circle"></i></a>
-                </li>
-            </ul>
-        </footer>
-    </div>
+    <%- include('./partials/footer'); %>
     <!-- /Footer -->
     <!-- /Login and Signup page -->
 
 </body>
 <script src="/JS/index.js" type="text/javascript"></script>
 
-<!-- Using bootstrap js -->
-<script src="/js/bootstrap.bundle.min.js"></script>
 </html>

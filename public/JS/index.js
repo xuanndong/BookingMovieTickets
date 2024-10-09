@@ -6,6 +6,7 @@ const closeIcons = document.querySelectorAll('#close');
 const bxMenu = document.querySelector('.menu-show');
 const sidebar = document.getElementById('sidebar');
 
+
 // Bắt sự kiện khi người dùng đăng nhập
 const loggedIn = document.getElementById('loggedIn');
 const notLoggedIn = document.getElementById('notLoggedIn');
@@ -56,3 +57,51 @@ document.body.addEventListener('click', (event) => {
         sidebar.classList.add('d-none');
     }
 });
+
+// const formLogin = document.getElementById('loginForm');
+// const submitter = document.querySelector('button[type=submit]');
+
+// // Call API
+// formLogin.addEventListener('submit', async (event) => {
+//     event.preventDefault();
+//     // const form = new FormData(formLogin,);
+//     console.log(form);
+//     try {
+//         const errorInfo = document.getElementById('errLogin');
+
+//         const respone = await fetch('/login', {
+//             method: 'POST',
+//             body: JSON.stringify(form),
+//         });
+//         console.log(respone);
+//         if(!respone.ok) {
+//             errorInfo.classList.remove('d-none');
+//             throw new Error("Not completed!");
+//         }
+//         const data = await respone.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// });
+
+// async function fetchDataUser() {
+//     console.log("hello");
+//     try {
+//         const errorInfo = document.getElementById('errLogin');
+
+//         const respone = await fetch('/login', {
+//             method: 'POST',
+//             body: JSON.stringify()
+//         });
+//         console.log(respone);
+//         if(!respone.ok) {
+//             errorInfo.classList.remove('d-none');
+//             throw new Error("Not completed!");
+//         }
+//         const data = await respone.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }

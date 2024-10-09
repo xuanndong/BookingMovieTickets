@@ -6,8 +6,7 @@ create table if not exists accounts (
     account_id uuid primary key default gen_random_uuid(),
     username varchar(100) not null unique,
     email varchar(200) not null unique,
-    hashpwd text not null,
-    salt varchar(20)
+    password text not null
 );
 
 create table if not exists movies (

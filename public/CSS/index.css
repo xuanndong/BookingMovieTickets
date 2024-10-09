@@ -352,3 +352,10 @@ a:hover {
 .bx {
     cursor: pointer;
 }
+
+.errorInfo {
+    font-size: 0.8rem;
+    color: rgb(233, 87, 87);
+    border-radius: 0.6rem;
+    margin-left: 0.3rem;
+}

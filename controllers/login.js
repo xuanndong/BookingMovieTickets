@@ -4,27 +4,26 @@ import 'dotenv/config';
 // Chưa giải quyết được vấn đề về có 2 tài khoản trùng nhau về cả password và username
 // Ý tưởng: Nếu username đã có trong database rồi thì cảnh báo người dùng tên này đã tồn tại
 
-async function loginAccount(req, res){
-    const account = await db.getAccount(req.body);
+const loginAccount = async (req, res, next) => {
+    try {
+        const { username, password } = req.body;
+        const user = await db.getAccount(username, password);
 
-    // const customer = account.map(i => Object.values(i));
-    // res.render('index', {
-    //     username: account[0].username,
-    // })
-    // const a = account.filter(i => Object.)
-    // let user = '';
-    // for(const entry of account) {
-    //     const [key, value] = entry;
-    //     user = key;
-    // };
+        if (!user || user.length === 0) {
+            const error = new Error("Account or password is incorrect!");
+            Object.defineProperty(error, 'status', {
+                value: 401,
+            });
+            error.name = "Incorrect";
+            throw error;
+        } else {
+            return res.json(user[0]);
+        }
 
-    let accc = '';
-    for (const i of account) {
-        accc += i.username +" ";
+    } catch (error) {
+        next(error);
     }
-
-    res.send(accc);
-}
+};
 
 export default {
     loginAccount,
