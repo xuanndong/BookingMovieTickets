@@ -143,6 +143,10 @@
     .slogan i {
         font-size: 3.2rem;
     }
+
+    .login-page {
+        width: 900px;
+    }
 }
 
 main {

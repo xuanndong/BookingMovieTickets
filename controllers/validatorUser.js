@@ -28,6 +28,6 @@ const createValidator = [
     },
 ];
 
-export default {
+export {
     createValidator,
 };

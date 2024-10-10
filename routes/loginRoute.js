@@ -1,11 +1,10 @@
 import { Router } from "express";
-import controller from "../controllers/login.js";
+import { logInUser } from "../controllers/login.js";
 
 const loginRouter = Router();
 
-loginRouter.post('', controller.loginAccount);
+loginRouter.post('', logInUser);
 
-
-export default {
+export {
     loginRouter,
 };

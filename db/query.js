@@ -9,7 +9,7 @@ async function addAccount(username, email, password) {
     await pool.pool.query(`
         insert into accounts (username, email, password)
         values
-            ($1, $2, $3); 
+            ($1, $2, $3);
     `, [username, email, hashedPassword]);
 }
 
@@ -31,7 +31,7 @@ async function getUserByID(id) {
 }
 
 async function getUsserByUserName(username) {
-    const query = 'SELECT * FROM accounts WHERE account_id = $1';
+    const query = 'SELECT * FROM accounts WHERE username = $1';
     // INJECTION ATTACK SAFE METHOD FOR CUSTOMIZABLE QUERIES
     const { rows } = await pool.pool.query(query, [username]);
     return rows[0];
