@@ -3,7 +3,7 @@ const loginPage = document.querySelector('.login-page');
 const signUp = document.getElementById('signup');
 const signUpPage = document.querySelector('.signup-page');
 const closeIcons = document.querySelectorAll('#close');
-const bxMenu = document.querySelector('.menu-show');
+const bxMenu = document.getElementById('bxMenu');
 const sidebar = document.getElementById('sidebar');
 
 
@@ -23,7 +23,7 @@ navMenu.forEach(item => {
         item.classList.remove('active');
         item.classList.add('text-dark');
     });
-})
+});
 // Chọn item trong sidebar
 
 // Login event is activated by click button "Login"
@@ -39,12 +39,12 @@ signUp.addEventListener('click', () => {
 
 closeIcons.forEach(icon => {
     icon.addEventListener('click', () => {
-        if(loginPage.classList.contains('d-none')){
+        if (loginPage.classList.contains('d-none')) {
             signUpPage.classList.add('d-none');
-        }else {
+        } else {
             loginPage.classList.add('d-none');
         }
-    })
+    });
 });
 
 bxMenu.addEventListener('click', () => {
@@ -53,55 +53,95 @@ bxMenu.addEventListener('click', () => {
 
 // Delete menu event when click anywhere except bxMenu
 document.body.addEventListener('click', (event) => {
-    if(event.target !== bxMenu){
+    if (event.target !== bxMenu) {
         sidebar.classList.add('d-none');
     }
 });
 
-// const formLogin = document.getElementById('loginForm');
-// const submitter = document.querySelector('button[type=submit]');
+const errorInfo = document.querySelector('.errorInfo');
+const signUpForm = document.getElementById('signupForm');
 
-// // Call API
-// formLogin.addEventListener('submit', async (event) => {
-//     event.preventDefault();
-//     // const form = new FormData(formLogin,);
-//     console.log(form);
-//     try {
-//         const errorInfo = document.getElementById('errLogin');
+signUpForm.addEventListener('submit', async (event) => {
+    signUpPage.classList.add("d-none");
+    event.preventDefault();
+    const formData = new URLSearchParams(new FormData(event.target));
 
-//         const respone = await fetch('/login', {
-//             method: 'POST',
-//             body: JSON.stringify(form),
-//         });
-//         console.log(respone);
-//         if(!respone.ok) {
-//             errorInfo.classList.remove('d-none');
-//             throw new Error("Not completed!");
-//         }
-//         const data = await respone.json();
-//         console.log(data);
-//     } catch (error) {
-//         console.error(error);
-//     }
-// });
+    try {
+        const respone = await fetch('/signup', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formData,
+        });
 
-// async function fetchDataUser() {
-//     console.log("hello");
-//     try {
-//         const errorInfo = document.getElementById('errLogin');
+        if (!respone.ok) {
+            errorInfo.classList.remove('d-none');
+            throw new Error("Not completed!");
+        }
+        await fetchLogin();
+    } catch (error) {
+        console.error(error);
+    }
+});
 
-//         const respone = await fetch('/login', {
-//             method: 'POST',
-//             body: JSON.stringify()
-//         });
-//         console.log(respone);
-//         if(!respone.ok) {
-//             errorInfo.classList.remove('d-none');
-//             throw new Error("Not completed!");
-//         }
-//         const data = await respone.json();
-//         console.log(data);
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+const logInForm = document.getElementById('loginForm');
+
+logInForm.addEventListener('submit', async (event) => {
+    loginPage.classList.add('d-none');
+    event.preventDefault();
+    const formData = new URLSearchParams(new FormData(event.target));
+
+    try {
+        const respone = await fetch("/login", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData,
+        });
+
+        if (!respone.ok) {
+            errorInfo.classList.remove('d-none');
+            throw new Error("Not completed");
+        }
+        await fetchLogin();
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+async function fetchLogin() {
+    try {
+        const respone = await fetch("/isAuth");
+        const result = await respone.json();
+
+        if (result.user) {
+            notLoggedIn.classList.add('d-none');
+            loggedIn.classList.remove('d-none');
+
+            loggedIn.querySelector('strong').innerText = result.user.username;
+        } else {
+            console.error("Not Completed");
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+const signOut = document.getElementById('signOut');
+signOut.addEventListener('click', async (event) => {
+    event.preventDefault();
+
+    try {
+        const respone = await fetch("/isAuth/log-out");
+        const result = await respone.json();
+
+        if (result.auth) {
+            throw new Error('Sign Out failed');
+        }
+        window.location.assign('/');
+    } catch (error) {
+        console.error(error);
+    }
+});

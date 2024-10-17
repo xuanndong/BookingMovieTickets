@@ -30,13 +30,14 @@ app.use('/icons', express.static(path.join(__dirname, 'node_modules', 'boxicons'
 
 // SET SESSION
 app.use(session({
+    name: "liz",
     secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
-    cookie: { 
+    cookie: {
         sameSite: 'strict',
         secure: false,
-        maxAge: 1000*60*60
+        maxAge: 1000 * 60,
     },
 }));
 app.use(passport.session());

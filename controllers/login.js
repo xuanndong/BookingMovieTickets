@@ -1,4 +1,3 @@
-import db from '../db/query.js';
 import 'dotenv/config';
 import { passport } from '../config/passport.config.js';
 

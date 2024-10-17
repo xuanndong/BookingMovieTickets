@@ -1,6 +1,6 @@
 <nav class="container-fluid d-flex align-items-center justify-content-between py-3 mb-3 border-bottom">
     <div class="d-flex align-items-center">
-        <button class="menu-show d-flex align-items-center"><i class='bx bx-menu fw-bold'></i><span class="d-none">Menu</span></button>
+        <button class="menu-show d-flex align-items-center"><i id="bxMenu" class='bx bx-menu fw-bold'></i><span class="d-none">Menu</span></button>
         <!-- Tạo hiệu ứng hiển thị menu-->
         <div id="sidebar" class="d-none flex-column flex-shrink-0 p-2 border border-dark">
             <ul class="nav nav-pills flex-column mb-auto">
@@ -58,16 +58,16 @@
 
         <!-- When login completed -->
         <div class="d-none d-flex justify-content-end me-2 dropdown" id="loggedIn">
-        <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>mdo</strong>
+            <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/defaultAvartar.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong></strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                 <li><a class="dropdown-item text-decoration-none" href="#">Wallet</a></li>
                 <li><a class="dropdown-item text-decoration-none" href="#">Settings</a></li>
                 <li><a class="dropdown-item text-decoration-none" href="#">Profile</a></li>
                 <li><hr class="dropdown-divider border-1 border-white"></li>
-                <li><a class="dropdown-item text-decoration-none" href="#">Sign out</a></li>
+                <li><a class="dropdown-item text-decoration-none" href="/isAuth/log-out" id="signOut">Sign out</a></li>
             </ul>
         </div>
         <!-- /When login completed -->
