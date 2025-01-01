@@ -24,37 +24,6 @@ const Purchase = () => {
   localStorage.showtime = showtime._id;
   localStorage.seats = JSON.stringify(selectedSeats);
 
-  const onPurchase = async (data) => {
-    try {
-      SetIsPurchasing(true);
-      const response = await axios.post(
-        `/showtime/${showtime._id}`,
-        { seats: selectedSeats },
-        {
-          headers: {
-            Authorization: `Bearer ${auth.token}`,
-          },
-        }
-      );
-      navigate("/ticket");
-      toast.success("Purchase seats successful!", {
-        position: "top-center",
-        autoClose: 2000,
-        pauseOnHover: false,
-      });
-    } catch (error) {
-      setPurchaseError(error.response?.data?.message || "Purchase failed");
-      navigate("/");
-      toast.error(error.response.data.message || "Error", {
-        position: "top-center",
-        autoClose: 2000,
-        pauseOnHover: false,
-      });
-    } finally {
-      SetIsPurchasing(false);
-    }
-  };
-
   const makePayment = async () => {
     const stripe = await loadStripe(
       "pk_test_51QbuxiIZdVuheAoClGFGvfWY8FnW5eo1XPLGk5cDefRkNyeDUqyvEbQiOywGcpREscoLReN2CY4pmQc2WXVUvAcP0033x7wrAN"
