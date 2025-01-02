@@ -16,7 +16,7 @@ import User from "./pages/User";
 import Result from "./pages/Result";
 
 axios.defaults.baseURL =
-  import.meta.env.VITE_SERVER_URL || "http://localhost:3000";
+  import.meta.env.VITE_SERVER_URL || "http://localhost:3000/";
 axios.defaults.withCredentials = true;
 
 function App() {
